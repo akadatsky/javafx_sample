@@ -13,6 +13,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        // TODO extract constants
         Canvas canvas = new Canvas(1200, 700);
 
         BorderPane group = new BorderPane();
@@ -24,7 +25,10 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.show();
 
+        // TODO extract field
         GraphicsContext gc = canvas.getGraphicsContext2D();
+
+        // TODO extract method
         gc.setFill(Color.RED);
         gc.fillOval(10, 10, 50, 50);
     }
