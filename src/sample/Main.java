@@ -10,11 +10,14 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    public static final int WIDTH = 1200;
+    public static final int HEIGHT = 700;
+    private GraphicsContext gc;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        // TODO extract constants
-        Canvas canvas = new Canvas(1200, 700);
+        Canvas canvas = new Canvas(WIDTH, HEIGHT);
 
         BorderPane group = new BorderPane();
         group.setCenter(canvas);
@@ -25,16 +28,18 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.show();
 
-        // TODO extract field
-        GraphicsContext gc = canvas.getGraphicsContext2D();
+        gc = canvas.getGraphicsContext2D();
 
-        // TODO extract method
-        gc.setFill(Color.RED);
-        gc.fillOval(10, 10, 50, 50);
+        draw();
     }
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    private void draw() {
+        gc.setFill(Color.RED);
+        gc.fillOval(10, 10, 50, 50);
     }
 
 }
